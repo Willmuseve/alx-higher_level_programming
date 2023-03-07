@@ -2,5 +2,3 @@
 
 TMPFILE=$(mktemp)
 echo "$PYCODE" > $TMPFILE
-
-python $TMPFILE
