@@ -1,3 +1,6 @@
-#!/bn/bash
+#!/bin/bash
 
-python3 -c "$PYCODE"
+TMPFILE=$(mktemp)
+echo "$PYCODE" > $TMPFILE
+
+python $TMPFILE
