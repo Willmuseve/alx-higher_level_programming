@@ -14,5 +14,5 @@ if __name__ == "__main__":
     print("{} {}".format(y - 1, z))
     for i, value in enumerate(argv):
         if i > 0:
-            print("{}: {}".format(i, value))
+            print("{:d}: {:s}".format(i, value))
 
