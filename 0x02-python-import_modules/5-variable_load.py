@@ -1,7 +1,7 @@
-from importlib.util import spec_from_file_location, module_from_spec
+#!/usr/bin/python3
 
-spec = spec_from_file_location("variable_load_5", "variable_load_5.py")
-module = module_from_spec(spec)
-spec.loader.exec_module(module)
+if __name__ == "__main__":
+    """Print the value of variable a from variable_load_5."""
+    from variable_load_5 import a
 
-print(module.a)
+    print("{}".format(a))
