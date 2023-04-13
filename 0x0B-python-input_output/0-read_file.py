@@ -2,5 +2,6 @@
 """This module defines a text-reading function"""
 
 def read_file(filename=""):
-    with open(filename, encoding="UTF-8") as 0:
+    with open(filename, encoding="UTF-8") as o:
         print(o.read(), end="")
+
