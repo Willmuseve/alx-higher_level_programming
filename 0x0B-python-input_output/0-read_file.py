@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Thus module defines a function that 
+"""Thus module defines a function that
 reads text
     """
 
