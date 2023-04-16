@@ -5,11 +5,7 @@
 
 
 class MyList(list):
-    """a subclass of list"""
-    def __init__(self):
-        """initialization"""
-        super().__init__()
-
+    """inherits from list"""
     def print_sorted(self):
-        """prints list"""
+        """prints a sorted list"""
         print(sorted(self))
