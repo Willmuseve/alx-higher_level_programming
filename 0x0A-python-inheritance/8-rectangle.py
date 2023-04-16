@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-""" empty class"""
+""" an empty class"""
 
 
 class BaseGeometry:
-    """class method"""
+    """class  method"""
 
     def area(self):
-        """calculates the area"""
+        """Method to calculate the area"""
 
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """value"""
+        """method to validate the value"""
 
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
@@ -21,10 +21,10 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """ inherits  parent class"""
+    """ A class which inherits the parent"""
 
     def __init__(self, width, height):
-        """initializes rectangle"""
+        """initializes a rect"""
 
         self.integer_validator("width", width)
         self.__width = width
