@@ -1,0 +1,66 @@
+# The ``5-text_indentation`` module
+============================================
+How to use 5-text_indentation.py
+============================================
+
+This library has one function called ``text_indentation()``
+
+``text_indentation()`` prints a text with 2 new lines after each of these
+characters: ., ? and :
+
+Importing the function matrix_divided.
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Passing the given text.
+    >>> text_indentation("""Make it a long voyage captain. So it will be? Needs paprika?""")
+        Make it a long voyage captain.
+	    <BLANKLINE>
+	        So it will be?
+		    <BLANKLINE>
+		        Needs paprika?
+			    <BLANKLINE>
+
+Passing an empty string as text.
+    >>> text_indentation("")
+
+Passing a text with space at the beginning.
+    >>> text_indentation("        Buernos Aires")
+        Buernos Aires
+
+Printing a word with spaces around it.
+    >>> text_indentation("    Market    ")
+        Market
+
+Printing a word with a special character at the end.
+    >>> text_indentation("    Namaste    .")
+        Namaste
+	    <BLANKLINE>
+
+Passing a text with spaces between words and a special character at end of the sentence.
+    >>> text_indentation("Ana Ahbek?    bahebak?")
+        Ana Ahbek?
+	    <BLANKLINE>
+	        bahebak?
+		    <BLANKLINE>
+
+Passing a non-string as text.
+    >>> text_indentation(13)
+        Traceback (most recent call last):
+	        ...
+		    TypeError: text must be a string
+
+Passing None as text:
+    >>> text_indentation(None)
+        Traceback (most recent call last):
+	        ...
+		    TypeError: text must be a string
+
+Passing no arguments to text_indentation.
+    >>> text_indentation()
+        Traceback (most recent call last):
+	        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Passing more than one argument to text_indentation.
+    >>> text_indentation("Hola", "Commo Estas") #doctest: +ELLIPSIS
+        Traceback (most recent call last):
