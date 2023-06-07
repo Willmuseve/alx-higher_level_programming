@@ -27,7 +27,7 @@ def width(self):
 @width.setter
 def width(self, value):
     """ Method that sets the width of the rectangle """
-    if not isinstance(value, int):
+    if not type(int):
         raise TypeError("width must be an integer")
     if value < 0:
         raise ValueError("width must be >= 0")
@@ -43,7 +43,7 @@ def height(self):
 @height.setter
 def height(self, value):
     """ Method is used to set the height of the rectangle """
-    if not isinstance(value, int):
+    if not type(int):
         raise TypeError("height must be an integer")
     if value < 0:
         raise ValueError("height must be >= 0")
@@ -52,26 +52,23 @@ def height(self, value):
 
 def area(self):
     """ Calculates the rectangle area """
-    return self.__width * self.__height
+    return self.width * self.height
 
 
 def perimeter(self):
     """ Method to calculate the rectangle perimeter"""
     if self.__width == 0 or self.__height == 0:
         return 0
-    return (self.__width * 2) + (self.__height * 2)
+    return (self.width * 2) + (self.height * 2)
 
 
 def __str__(self):
     """ Method to represent the rectangle with # """
-    to_print = ""
-    if self.__width != 0 and self.__height != 0:
-        to_print = ("#" * self.__width + "\n") * self.__height
-        to_print = to_print[:-1]
-    return to_print
+    if self.width == 0 or self.height == 0:
+        return ""
+    return ((("#" * self.width) + "\n") * self.height)[:-1]
 
 
 def __repr__(self):
     """ Extract the representation of the rectangle with repr """
-    rep = "Rectangle({self.width}, {self.height})".format(self=self)
-    return rep
+    return "Rectangle({}, {})".format(self.width, self.height)
