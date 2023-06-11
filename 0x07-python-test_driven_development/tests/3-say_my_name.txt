@@ -1,53 +1,162 @@
-# The ``3-say_my_name`` module
-============================================
-How to use 3-say_my_name.py
-============================================
+How to Use 2-matrix_divided.py
+==============================
 
-This library has one function called ``say_my_name()``
+This module defines a matrix division function ``matrix_divided(matrix, div)``.
 
-``say_my_name()`` prints a person's first name and last name.
+Usage
+=====
 
-Importing the function say_my_name.
-    >>> say_my_name = __import__('3-say_my_name').say_my_name
+``matrix_divided(...)`` returns a new matrix that is a copy of the parameter
+``matrix`` with all elements divided by ``div``.
 
-Passing first_name and last_name correctly.
-    >>> say_my_name("Wendy", "Munyasi")
-        My name is Wendy Munyasi
+::
 
-    >> say_my_name("Breezy")
-        My name is Breezy
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [
+    ...     [3, 6, 9],
+    ...     [12, 15, 18]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
 
-Passing last_name as None.
-    >>> say_my_name("Wendy", None)
-        Traceback (most recent call last):
-	        ...
-		    TypeError: last_name must be a string
+Note that quotients are rounded to a maximum of two decimal places.
 
-Passing first_name and last_name as None.
-    >>> say_my_name(None, None)
-        Traceback (most recent call last):
-	        ...
-		    TypeError: first_name must be a string
+::
 
-Passing first name as None.
-    >>> say_my_name(None, "Breezy")
-        Traceback (most recent call last):
-	        ...
-		    TypeError: first_name must be a string
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
-Passing wrong types as first_name and last_name
-    >>> say_my_name(1, "Breezy")
-        Traceback (most recent call last):
-	        ...
-		    TypeError: first_name must be a string
+The original matrix is left unchanged.
 
-    >>> say_my_name("Chris", [4])
-        Traceback (most recent call last):
-	        ...
-		    TypeError: last_name must be a string
+::
 
-Passing more than two arguments to say_my_name().
-    >>> say_my_name("Chris", "Breezy", "Brown") #doctest: +ELLIPSIS
-        Traceback (most recent call last):
-	        ...
-   TypeError: say_my_name() takes from 1 to 2 positional arguments but ...
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
+
+The function can also handle floating-point numbers.
+
+::
+
+    >>> matrix = [
+    ...     [1.1, -2.2, 3.3],
+    ...     [4.4, 5.5, -6.6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.37, -0.73, 1.1], [1.47, 1.83, -2.2]]
+
+Integers and floats can be combined.
+
+::
+
+    >>> matrix = [
+    ...     [1, -2.2, 3, 4.4, 5],
+    ...     [-6.6, 7.00, 8, 9.999, 10]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
+
+Invalid Matrices
+==============
+
+The parameter ``matrix`` must be a list of lists consisting of either ints or
+floats. If ``matrix`` is not a list, a TypeError is raised.
+
+::
+
+    >>> matrix = "not a list"
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Note that an empty list will raise the TypeError.
+
+::
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+But an empty list of lists will succeed.
+
+::
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 3))
+    [[]]
+
+An identical TypeError is raised if ``matrix`` is not specifically a list of
+lists.
+
+::
+
+    >>> matrix = [1, 2, 3]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+The same TypeError is raised yet again if any elements in ``matrix`` are
+neither ints nor floats.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, "not a number", 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Finally, all the rows in ``matrix`` must be the same size. If any rows are
+of different sizes, a new TypeError is raised.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3, 4],
+    ...     [5, 6, 7]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+Invalid Divisors
+
+The parameter ``div`` must be either an int or float. Otherwise, a TypeError
+is raised.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, "not a number"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+::
+
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+``div`` must also be non-zero. Otherwise, a ZeroDivisionError is raised.
+
+::
+
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
