@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-""" Class doc"""
+"""Returns a list of available attributes and methods of an object."""
+
+
 def lookup(obj):
-  """
-g Returns a list of available attributes and methods of an object.
-  Args:
-    obj: The object to lookup attributes and methods for.
-  Returns:
-    A list of strings, where each string is the name of an attribute or method of the object.
-  """
-    return dir(obj)
+    """returns list of dir()"""
+    return([y for y in dir(obj)])
