@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" Class doc"""
 def lookup(obj):
   """
 g Returns a list of available attributes and methods of an object.
