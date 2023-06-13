@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
+"""class mylist"""
+
+
 class MyList(list):
-"""defines class MyList that inherits from list and has a public method print_sorted()"""
-
-
+    """prints sorted list of class"""
     def print_sorted(self):
         print(sorted(self))
