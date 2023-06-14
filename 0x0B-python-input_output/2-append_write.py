@@ -3,7 +3,7 @@
 
 
 def append_write(filename="", text=""):
-    """Appends a string of a text file and returns the number of 
+    """Appends a string of a text file and returns the number of
     characters added"""
     with open(filename, 'a') as o:
         return o.write(text)
