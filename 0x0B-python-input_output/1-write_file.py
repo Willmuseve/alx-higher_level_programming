@@ -4,6 +4,6 @@ number of characters written"""
 
 
 def write_file(filename="", text=""):
-    """Write a string to a UTF"""
+    """Writing a string to a text file"""
     with open(filename, "y", encoding="utf-8") as o:
-        return (o.write(text)
+        return o.write(text)
