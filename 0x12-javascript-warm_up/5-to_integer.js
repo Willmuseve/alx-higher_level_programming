@@ -1,9 +1,2 @@
 #!/usr/bin/node
-
-const number = parseInt(process.argv[2]);
-
-if (number) {
-    console.log('My number: ' + number);
-} else {
-    console.log('Not a number');
-}
+console.log(parseInt(process.argv[2]) ? `My number: ${parseInt(process.argv[2])}` : 'Not a number');
