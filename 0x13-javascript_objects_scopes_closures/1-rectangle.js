@@ -1,9 +1,6 @@
 #!/usr/bin/node
 
-//rectangle class
-//constructor with two arguments w and h
-// instance attribute width with the value of w
-//  instance attribute height with the value of h
+//rectangle class with width and height attributes
 
 class Rectangle {
   constructor(w, h) {
@@ -11,3 +8,4 @@ class Rectangle {
     this.height = h;
   }
 }
+module.exports = Rectangle;
