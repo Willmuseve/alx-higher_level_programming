@@ -5,11 +5,11 @@ a `name` starting with the letter `N`
 from the database `hbtn_0e_0_usa`.
 """
 
-import MySQLdb as db
+import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
-    connect_db = db.connect(host="localhost", port=3306,
+    connect_db = MySQLdb.connect(host="localhost", port=3306,
                             user=argv[1], passwd=argv[2], db=argv[3])
     cursor_db = connect_db.cursor()
 
@@ -20,4 +20,4 @@ if __name__ == '__main__':
     y = cursor_db.fetchall()
 
     for x in y:
-        print(y)
+        print(x)
