@@ -10,8 +10,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access to the database and get the states
-    from the database.
+    Access to the database
     """
 
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
