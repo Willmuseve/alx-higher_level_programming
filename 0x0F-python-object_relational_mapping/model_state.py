@@ -12,7 +12,7 @@ Base = declarative_base()
 
 
 class State(Base):
-    __tname__ = 'states'
+    __tableame__ = 'states'
     id = Column(
         Integer,
         Sequence('my_sequence'),
