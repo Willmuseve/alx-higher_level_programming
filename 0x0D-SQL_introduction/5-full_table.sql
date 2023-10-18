@@ -1,7 +1,4 @@
---a script that prints the full description of the table of the 
---first_table from the dtabase hbtn_0c_0
+--a script that  prints the full description of the table first_table
+-- You are not allowed to use the DESCRIBE or EXPLAIN statements
 
-SELECT COLUMN_NAME, DATA_TYPE, COLUMN_TYPE, IS_NULLABLE, COLUMN_KEY,
-COLUMN_DEFAULT, EXTRA
-       FROM information_schema.COLUMNS
-       WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table';
+SHOW CREATE TABLE first_table;
