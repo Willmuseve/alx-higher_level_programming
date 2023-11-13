@@ -3,10 +3,12 @@
 //prints message depending
 // on the number of arguments passed
 
-const argsco = process.argv.length;
+const argsc = process.argv.length - 2;
 
-if (argsco > 2) {
-  console.log('Argument' + (argsco > 3 ? 's' : '') + ' found');
-} else {
+if (argsc === 0) {
   console.log('No argument');
+} else if (argsc === 1) {
+  console.log('Argument found');
+} else {
+  console.log('Arguments found');
 }
