@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-//prints message depending on the number of args passed
+//prints message depending
+// on the number of arguments passed
 
 const argsco = process.argv.length;
 
