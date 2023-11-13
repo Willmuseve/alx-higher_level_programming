@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-//prints message depending
+//a script that prints message depending
 // on the number of arguments passed
 
 const argsc = process.argv.length - 2;
