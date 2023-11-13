@@ -5,7 +5,7 @@
 const argsco = process.argv.length;
 
 if (argsco > 2) {
-  console.log('Argument' + (argc > 3 ? 's' : '') + ' found');
+  console.log('Argument' + (argsco > 3 ? 's' : '') + ' found');
 } else {
   console.log('No argument');
 }
