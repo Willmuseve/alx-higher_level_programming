@@ -11,6 +11,6 @@ if (Number.isNaN(insts)) {
   let x = insts;
   while (x > 0) {
     console.log('C is fun');
-    i--;
+    x--;
   }
 }
