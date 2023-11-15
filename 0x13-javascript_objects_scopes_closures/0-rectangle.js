@@ -1,9 +1,11 @@
 #!/usr/bin/node
 
-// Represents a rectangle
- 
+// Empty class Rectangle
+
 class Rectangle {
-//empty
+  // empty
 }
 
-module.exports = Rectangle; //exports the rectangle class`
+// exports the Rectangle class to other classes
+
+module.exports = Rectangle;
