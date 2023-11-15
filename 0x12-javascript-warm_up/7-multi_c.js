@@ -3,7 +3,7 @@
 //a script that prints x times "C is fun"
 
 const numb = process.argv[2];
-const isnts = parseInt(numb);
+const insts = parseInt(numb);
 
 if (Number.isNaN(insts)) {
   console.log('Missing number of occurrences');
