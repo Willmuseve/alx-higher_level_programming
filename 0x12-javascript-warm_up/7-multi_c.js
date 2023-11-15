@@ -1,16 +1,16 @@
 #!/usr/bin/node
 
-//a script that prints x times "C is fun"
+// prints x times c if dfun
 
 const numb = process.argv[2];
-const insts = parseInt(numb);
+const numb2 = parseInt(numb);
 
-if (Number.isNaN(insts)) {
+if (Number.isNaN(numb2)) {
   console.log('Missing number of occurrences');
 } else {
-  let x = insts;
-  while (x > 0) {
+  let j = numb2;
+  while (j > 0) {
     console.log('C is fun');
-    x--;
+    j--;
   }
 }
