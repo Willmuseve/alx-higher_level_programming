@@ -15,6 +15,6 @@ function factorial (n) {
 }
 
 const numb = parseInt(process.argv[2]);
-const ret = factorial(ret);
+const ret = factorial(numb);
 
 console.log(ret);
