@@ -2,8 +2,12 @@
 
 // Searches for the second largest integer
 
-const numb = parseInt(process.argv.length - 2);
-
-for (let i = 0; i < numb; i++) {
-	console.log(numb[i]);
+if (process.argv.length <= 3) {
+  console.log(0);
+} else {
+  const arguments = process.argv
+    .map(Number)
+    .slice(2, process.argv.length)
+    .sort((a, b) => a - b);
+  console.log(arguments[arguments.length - 2]);
 }
