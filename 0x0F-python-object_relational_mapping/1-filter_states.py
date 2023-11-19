@@ -18,11 +18,12 @@ if __name__ == "__main__":
                          passwd=password, db=database)
 
     db_cursor = db.cursor()
-    db_cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    db_cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY\
+            id ASC")
 
     rows = db_cursor.fetchall()
     for r in rows:
-        print(row)
+        print(r)
 
     db_cursor.close()
     db.close()
