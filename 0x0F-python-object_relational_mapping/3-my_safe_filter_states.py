@@ -21,10 +21,8 @@ if __name__ == "__main__":
                          passwd=password, db=database)
 
     db_cursor = db.cursor()
-    db_cursor.execute(
-        "SELECT * FROM states WHERE name=%s
-        ORDER BY states.id ASC", (sys.argv[4],)
-    )
+    db_cursor.execute("SELECT * FROM states WHERE name=%s\
+        ORDER BY states.id ASC", (sys.argv[4],))
 
     rows = db_cursor.fetchall()
     for r in rows:
