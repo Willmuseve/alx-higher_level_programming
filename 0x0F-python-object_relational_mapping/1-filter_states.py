@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 
 """
-A script that lists all states that start with  a a'name'
-starting with the letter n from the db 'hbtn_0e_0_usa'
+A script that lists all states that start with  a name
+starting with the letter n from the db hbtn_0e_0_us
 """
 
 
 import MySQLdb
 import sys
+
+"""
+access to get states from the database
+"""
 
 if __name__ == "__main__":
     username = sys.argv[1]
