@@ -25,5 +25,4 @@ if __name__ == '__main__':
 
     print(new_unst.id)
 
-
     session.commit()
