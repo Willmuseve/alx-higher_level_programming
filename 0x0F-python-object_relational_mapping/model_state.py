@@ -1,16 +1,25 @@
 #!/usr/bin/python3
 
 """
-a python file that contains the class definition of a State and an instanc
+A script that defines a class State which is an instance
+of Base=declarative_base() class
 """
 
-import sys
-from model_state import State, Base
+from sqlalchemy import create_engine, Column, Integer, String, MetaData
+from sqlalchemy.ext.declarative import declarative_base
 
-from sqlalchemy import (create_engine)
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'\
-            .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    
-    Base.metadata.create_all(engine)
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
+
+
+class State(Base):
+    """
+    Class state which inherits from Base.
+    Has an integer id and a name as a string
+    """
+
+    __tablename__ = 'states'
+
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
