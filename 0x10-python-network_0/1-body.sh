@@ -1,4 +1,3 @@
 #!/bin/bash
-# a script that uses GET request to an URL with curl, and display
-# the body of the response
+# a script that uses GET request to an URL with curl
 curl -sL "$1"
