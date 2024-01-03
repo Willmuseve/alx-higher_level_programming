@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-//declarations
 const request = require('request');
 const link = process.argv[2];
 
@@ -10,15 +9,15 @@ request.get(link, { json: true }, (error, response, body) => {
     return;
   }
 
-  const DoneT = {};
+  const taskDone = {};
   body.forEach((todo) => {
     if (todo.completed) {
-      if (!DoneT[todo.userId]) {
-        DoneT[todo.userId] = 1;
+      if (!taskDone[todo.userId]) {
+        taskDone[todo.userId] = 1;
       } else {
-        DoneT[todo.userId] += 1;
+        taskDone[todo.userId] += 1;
       }
     }
   });
-  console.log(DoneT);
+  console.log(taskDone);
 });
