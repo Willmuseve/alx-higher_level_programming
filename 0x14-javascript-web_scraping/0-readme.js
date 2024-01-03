@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const filesx = require('filesx');
+const filesx = require('fs');
 
 const p = process.argv[2];
 
