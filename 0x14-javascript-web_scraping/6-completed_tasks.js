@@ -4,7 +4,6 @@
 const request = require('request');
 const link = process.argv[2];
 
-//code
 request.get(link, { json: true }, (error, response, body) => {
   if (error) {
     console.log(error);
